@@ -1,0 +1,33 @@
+
+<div class="container text-center">
+  <div class="display-6">
+    Pokedex
+    <img src="{{url}}" class="rounded mx-auto d-block" alt="...">
+  </div>
+    Pokémon {{id}}: {{poke.name | titlecase}}
+    <div class="row m-3">
+      <p *ngFor="let tipos of poke.types">{{tipos.type.name}}</p>
+    </div>
+    <div class="row m-3"><p>Altura: {{poke.height}}</p></div>
+    <div class="row m-3"><p>Peso: {{poke.weight}}</p></div>
+</div>
+<div class="row m-3">
+  <div class="col">
+    <button class="btn btn-primary" (click)="volta()">anterior</button>
+  </div>
+</div>
+<div class="row m-3">
+  <div class="col">
+    <button class="btn btn-primary" (click)="frente()">próximo</button>
+  </div>
+</div>
+<div class="row m-3">
+  <div class="col">
+    <h3>Abilidades</h3>
+    <p *ngFor="let abilidades of poke.abilities">{{abilidades.slot}}: {{abilidades.ability.name | titlecase}}</p>
+  </div>
+  <div class="col">
+    <h3>Stats</h3>
+    <p *ngFor="let stats of poke.stats">{{stats.stat.name| titlecase}}: {{stats.base_stat}}</p>
+  </div>
+</div>
